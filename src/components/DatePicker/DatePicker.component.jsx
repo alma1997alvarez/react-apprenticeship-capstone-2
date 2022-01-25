@@ -1,24 +1,14 @@
-import React, { useState } from "react";
-import { DateInput, ShowButton } from "./DatePicker.styled";
-import useFetchPOD from "../../hooks/useFetchPOD";
+import React from "react";
+import { DateInput, ShowButton, InputLabel } from "./DatePicker.styled";
 
-const DatePicker = () => {
-  let date = new Date().toISOString().substr(0, 10);
-
-  const [selectedDate, setSelectedDate] = useState(date);
-
-  const showPicHandler = () => {
-    console.log(selectedDate);
-    const data = useFetchPOD(selectedDate);
-    console.log(data);
-  };
-
+const DatePicker = ({ clickHandler, date, selectedDate, setDate }) => {
   const changeHandler = (event) => {
-    setSelectedDate(event.target.value);
+    setDate(event.target.value);
   };
 
   return (
     <>
+      <InputLabel htmlFor="picture-date">SELECT A DATE</InputLabel>
       <DateInput
         type="date"
         name="picture-date"
@@ -26,7 +16,7 @@ const DatePicker = () => {
         onChange={changeHandler}
         value={selectedDate}
       />
-      <ShowButton onClick={showPicHandler}>Show picture</ShowButton>
+      <ShowButton onClick={clickHandler}>Show picture</ShowButton>
     </>
   );
 };

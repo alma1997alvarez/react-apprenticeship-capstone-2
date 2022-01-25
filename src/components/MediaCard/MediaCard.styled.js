@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const MediaCardContainer = styled.div`
   width: 90vw;
-  max-width: 1000px;
+  max-width: 900px;
   text-align: center;
 `;
 
@@ -17,7 +17,7 @@ const Thumbnail = styled.img`
 `;
 
 const Description = styled.p`
-  margin-top: 0;
+  margin-top: -10px;
   background-color: #dce4f7;
   padding: 1rem;
   width: 100%;

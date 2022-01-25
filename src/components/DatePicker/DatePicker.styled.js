@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+const InputLabel = styled.label`
+  margin-top: 2rem;
+`;
+
 const DateInput = styled.input`
   text-align: center;
   border: none;
@@ -8,10 +12,14 @@ const DateInput = styled.input`
   line-height: 2.5rem;
   cursor: pointer;
   width: 250px;
-  margin: 2rem 0;
+  margin: 0 0 2rem 0;
 
   &:focus {
     outline: none;
+  }
+
+  @media (max-width: 300px) {
+    width: 90vw;
   }
 `;
 
@@ -26,11 +34,11 @@ const ShowButton = styled.button`
   font-weight: 700;
   font-size: 1.3rem;
   padding: 5px 15px;
-  margin: 0 0 2rem 0;
+  margin: 0 0 4rem 0;
 
   &:hover {
     background-color: #3961bd;
   }
 `;
 
-export { DateInput, ShowButton };
+export { DateInput, ShowButton, InputLabel };

@@ -1,5 +1,5 @@
 import React from "react";
-import defaultThumbnail from "../../defaultPOD.jpeg";
+//import defaultThumbnail from "../../defaultPOD.jpeg";
 import {
   Thumbnail,
   Description,
@@ -7,20 +7,19 @@ import {
   MediaCardContainer,
 } from "./MediaCard.styled";
 
-const MediaCard = () => {
+const MediaCard = ({
+  mediaDetails: {
+    title = "",
+    explanation = "",
+    thumbnail_url = "",
+    url = "",
+  } = {},
+}) => {
   return (
     <MediaCardContainer>
-      <PictureTitle>Black star</PictureTitle>
-      <Thumbnail src={defaultThumbnail} />
-      <Description>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum
-      </Description>
+      <PictureTitle>{title}</PictureTitle>
+      <Thumbnail src={thumbnail_url ? thumbnail_url : url} />
+      <Description>{explanation}</Description>
     </MediaCardContainer>
   );
 };
