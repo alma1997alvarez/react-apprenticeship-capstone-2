@@ -9,6 +9,10 @@ const MediaCardContainer = styled.div`
 const PictureTitle = styled.h2`
   margin: 0 0 0.5rem 0;
   font-weight: 390;
+
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Thumbnail = styled.img`
